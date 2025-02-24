@@ -6,7 +6,6 @@ super user and create a new organization in Quay.
 
 ## Prerequisites
 
-- **Ansible** (version 2.18.2 or later)
 - Access to your Quay Container Registry instance
 - The `infra.quay_configuration` collection installed. Install it using:
 
