@@ -1,7 +1,7 @@
 # Quay Configuration Ansible Playbook
 
 This repository contains an Ansible playbook that leverages the
-`infra.quay_configuration` Ansible collection to initialize a Quay Container Registry
+`infra.quay_configuration` [Ansible collection](https://galaxy.ansible.com/ui/repo/published/infra/quay_configuration/) to initialize a Quay Container Registry
 super user and create a new organization in Quay.
 
 ## Prerequisites
