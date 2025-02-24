@@ -87,4 +87,6 @@ ok: [localhost] => {
 }
 ```
 
-This will create the organization using the details provided in `roles/quay-config/tasks/organization.yml`and a repository using the details provided in `roles/quay-config/tasks/repositories.yml`.
+This will create the organization using the details provided in:
+- `roles/quay-config/tasks/organization.yml`
+- `roles/quay-config/tasks/repositories.yml`
