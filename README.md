@@ -22,7 +22,7 @@ ansible-galaxy collection install infra.quay_configuration
 Edit `group_vars/all.yml` and update the Quay API host variable. For example:
 
 ```yaml
-quay_org_host: "https://registry-quay-quay-operator.apps.example.com"
+quay_host: "https://registry-quay-quay-operator.apps.example.com"
 quay_token: ""   # Leave this empty until after the admin-init step.
 ```
 
@@ -39,10 +39,10 @@ quay_admin_email: "quayadmin@example.com"
 
 ### 3. Update Organization Details
 
-Edit `roles/org-init/defaults/main.yml` with your organization details:
+Edit `roles/quay-config/defaults/main.yml` with your organization details:
 
 ```yaml
-# roles/org-init/defaults/main.yml
+# roles/quay-config/defaults/main.yml
 org_name: "test-org"
 org_email: "testquayadmin@example.com"
 # (Other optional organization variables can be left as defaults or empty)
