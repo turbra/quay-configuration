@@ -1,0 +1,6 @@
+---
+- name: Ensure the organization exists
+  ansible.builtin.import_tasks: organization.yml
+
+- name: Ensure the repositories exist
+  ansible.builtin.import_tasks: repositories.yml

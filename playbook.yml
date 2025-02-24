@@ -1,0 +1,8 @@
+---
+- name: Run specific Quay roles
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  roles:
+    - { role: admin-init, tags: [ "admin-init" ] }
+    - { role: quay-config, tags: [ "org-init" ] }

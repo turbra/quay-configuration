@@ -1,0 +1,15 @@
+---
+- name: Debug Quay connection and organization variables
+  debug:
+    msg: "quay_org_host is '{{ quay_host }}', quay_org_token is '{{ quay_token }}', org_name is '{{ org_name }}', org_email is '{{ org_email }}'"
+
+- name: Create or update Quay organization using quay_org from infra.quay_configuration
+  include_role:
+    name: infra.quay_configuration.quay_org
+  vars:
+    quay_org_host: "{{ quay_host }}"
+    quay_org_token: "{{ quay_token }}"
+    quay_org_name: "{{ org_name }}"
+    quay_org_email: "{{ org_email }}"
+    quay_org_validate_certs: false
+

@@ -1,0 +1,35 @@
+---
+- name: Ensure the initial user exists
+  infra.quay_configuration.quay_first_user:
+    username: "{{ username }}"
+    email: "{{ email }}"
+    password: "{{ password }}"
+    create_token: true
+    quay_host: "{{ quay_host }}"
+    validate_certs: false
+  register: result
+
+# The token is valid for 2 hours and 30 minutes
+- name: Display the generated OAuth access token
+  debug:
+    msg: "Access token: {{ result['access_token'] }}"
+
+# Update group_vars/all.yml with the new token so that subsequent runs use it.
+- name: Update quay_token in group_vars/all.yml with the new access token
+  lineinfile:
+    path: "{{ playbook_dir }}/group_vars/all.yml"
+    regexp: '^quay_token:'
+    line: 'quay_token: "{{ result.access_token }}"'
+  delegate_to: localhost
+  run_once: true
+
+# Using the OAuth access token to continue configuring Quay
+#- name: Ensure the user exists
+#  infra.quay_configuration.quay_user:
+#    username: jbob
+#    email: jimbob@example.com
+#    password: changeme
+#    state: present
+#    quay_token: "{{ result['access_token'] }}"
+#    quay_host: "{{ quay_host }}"
+#    validate_certs: false

@@ -1,0 +1,10 @@
+---
+- name: Create repository "web-app" under organization "{{ org_name }}"
+  infra.quay_configuration.quay_repository:
+    name: "{{ org_name }}/{{ repo_name }}" 
+    description: "Repository for web application"
+    visibility: "private"
+    state: present
+    quay_host: "{{ quay_host }}"
+    quay_token: "{{ quay_token }}"
+    validate_certs: "{{ quay_validate_certs }}"  

@@ -1,0 +1,4 @@
+---
+quay_host: "https://registry-quay-quay-operator.apps.example.com"
+quay_token: ""
+quay_validate_certs: false

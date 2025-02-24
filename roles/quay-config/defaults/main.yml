@@ -1,0 +1,24 @@
+---
+# Minimal organization configuration
+org_name: "test-org"
+org_email: "testquayadmin@example.com"
+
+# Optional values – leave empty if not used
+quay_org_prune: []
+quay_org_users: []
+quay_org_robots: []
+quay_org_teams: []
+quay_org_default_perms: []
+quay_org_applications: []
+quay_org_repositories: []
+repo_name: web-app
+  #quay_org_quota: 0 
+  #quay_org_warning_pct: 0
+  #quay_org_reject_pct: 0
+state: absent
+quay_org_cache_registry: ""
+quay_org_cache_insecure: false
+quay_org_cache_username: ""
+quay_org_cache_password: ""
+quay_org_cache_expiration: 0
+
